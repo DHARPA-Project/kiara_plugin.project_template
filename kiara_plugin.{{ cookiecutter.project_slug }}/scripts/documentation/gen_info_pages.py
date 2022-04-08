@@ -1,46 +1,34 @@
 # -*- coding: utf-8 -*-
-import mkdocs_gen_files
-from kiara import Kiara
-from kiara.doc.gen_info_pages import generate_pages_and_summary_for_types
+#  Copyright (c) 2022-2022, Markus Binsteiner
+#
+#  Mozilla Public License, version 2.0 (see LICENSE or https://www.mozilla.org/en-US/MPL/2.0/)
+
+import builtins
+from typing import Dict, Any
+
+from kiara.kiara import Kiara
+from kiara.doc.gen_info_pages import generate_detail_pages
 
 pkg_name = "kiara_plugin.{{ cookiecutter.project_slug }}"
-kiara = Kiara.instance()
+kiara: Kiara = Kiara.instance()
 
-value_types = kiara.type_mgmt.find_value_types_for_package(pkg_name)
-modules = kiara.module_mgmt.find_modules_for_package(
-    pkg_name, include_core_modules=True, include_pipelines=False
-)
-pipelines = kiara.module_mgmt.find_modules_for_package(
-    pkg_name, include_core_modules=False, include_pipelines=True
-)
-operation_types = kiara.operation_mgmt.find_operation_types_for_package(pkg_name)
+data_types = kiara.type_registry.get_context_metadata(only_for_package=pkg_name)
+modules = kiara.module_registry.get_context_metadata(only_for_package=pkg_name)
 
-types = []
-if value_types:
-    types.append("value_type")
+operation_types = kiara.operation_registry.get_context_metadata(only_for_package=pkg_name)
+
+types: Dict[str, Dict[str, Any]] = {}
+if data_types:
+    types["data_types"] = data_types
 if modules:
-    types.append("module")
-if pipelines:
-    types.append("pipeline")
+    types["modules"] = modules
 if operation_types:
-    types.append("operation_type")
+    types["operation_types"] = operation_types
 
-type_details = generate_pages_and_summary_for_types(
-    kiara=kiara,
-    types=types,
-    limit_to_package="kiara_plugin.{{ cookiecutter.project_slug }}",
+
+generate_detail_pages(
+    type_item_details=types,
 )
 
-summary_content = []
-for name, details in type_details.items():
-    line = f"* [{details['name']}]({details['path']})"
-    summary_content.append(line)
+builtins.plugin_package_context_info = types
 
-
-nav = ["* [Home](index.md)", "* [Usage](usage.md)"]
-nav.extend(summary_content)
-
-nav.append("* [API docs](reference/)")
-
-with mkdocs_gen_files.open("SUMMARY.md", "w") as f:
-    f.write("\n".join(nav))

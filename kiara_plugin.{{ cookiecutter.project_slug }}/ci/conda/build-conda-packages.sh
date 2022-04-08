@@ -17,7 +17,7 @@ fi
 
 echo $INPUT_DRY_RUN
 
-ANACONDA_USER="dharpa"
+ANACONDA_USER="{{ cookiecutter.anaconda_user }}"
 INPUT_OVERRIDE="false"
 INPUT_PLATFORMS="all"
 

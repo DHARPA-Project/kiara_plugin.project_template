@@ -16,33 +16,24 @@ class ExampleModuleConfig(KiaraModuleConfig):
 class ExampleModule(KiaraModule):
     """A very simple example module; concatenate two strings.
 
-    The purpose of this modules is to show the main elements of a ``KiaraModule``:
+    The purpose of this modules is to show the main elements of a [`KiaraModule`][kiara.modules.KiaraModule]:
 
-    the (optional) configuration
-    :    must inherit from ``ModuleTypeConfigSchema``, and the config class must be set as the "_config_cls" attribute
-         on the ``KiaraModule`` class. Configuration values can be retrieved via the ``self.get_config_value(key)``
-         method
-
-    the inputs description
-    :    must return a dictionary, containing the input name(s) as keys, and another dictionary containing type_name information
+    - ***the (optional) configuration class***: must inherit from [`KiaraModuleConfig`][kiara.modules.KiaraModuleConfig], and the config class must be set as the `_config_cls` attribute
+         on the `KiaraModule` class. Configuration values can be retrieved via the [`self.get_config_value(key)`][kiara.modules.KiaraModule.get_config_value] method
+    - ***the inputs description***: must return a dictionary, containing the input name(s) as keys, and another dictionary containing type_name information
          and documentation about the input data as value
-
-    the outputs description
-    :    must return a dictionary, containing the output name(s) as keys, and another dictionary containing type_name information
+    - ***the outputs description***: must return a dictionary, containing the output name(s) as keys, and another dictionary containing type_name information
          and documentation about the output data as value
-
-    the ``process`` method
-    :    this is where the actual work gets done. Input data can be accessed via ``inputs.get_value_data(key)``, results
+    - ***the ``process`` method***: this is where the actual work gets done. Input data can be accessed via ``inputs.get_value_data(key)``, results
          can be set with the ``outputs.set_value(key, value)`` method
 
-    Examples:
+    Example:
 
         This example module can be tested on the commandline with the ``kiara run`` command:
 
         ```
-        kiara run {{ cookiecutter.project_slug }}_example text_1="xxx" text_2="yyy"
+        kiara run core_types.example text_1="xxx" text_2="yyy"
         ```
-
     """
 
     _config_cls = ExampleModuleConfig

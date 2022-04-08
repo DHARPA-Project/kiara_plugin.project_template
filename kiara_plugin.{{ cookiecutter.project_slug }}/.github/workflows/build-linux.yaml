@@ -215,4 +215,4 @@ jobs:
     - name: merge tag
       run: git merge "${RELEASE_VERSION}"
     - name: push updated main branch
-      run: git push https://{% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}@github.com/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }}.git
+      run: git push https://{% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}@github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}.git

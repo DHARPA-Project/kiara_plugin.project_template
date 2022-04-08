@@ -1,16 +1,16 @@
 [![PyPI status](https://img.shields.io/pypi/status/kiara_plugin.{{ cookiecutter.project_slug }}.svg)](https://pypi.python.org/pypi/kiara_plugin.{{ cookiecutter.project_slug }}/)
 [![PyPI version](https://img.shields.io/pypi/v/kiara_plugin.{{ cookiecutter.project_slug }}.svg)](https://pypi.python.org/pypi/kiara_plugin.{{ cookiecutter.project_slug }}/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/kiara_plugin.{{ cookiecutter.project_slug }}.svg)](https://pypi.python.org/pypi/kiara_plugin.{{ cookiecutter.project_slug }}/)
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FDHARPA-Project%2Fkiara%2Fbadge%3Fref%3Ddevelop&style=flat)](https://actions-badge.atrox.dev/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }}/goto?ref=develop)
-[![Coverage Status](https://coveralls.io/repos/github/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }}/badge.svg?branch=develop)](https://coveralls.io/github/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }}?branch=develop)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2F{{ cookiecutter.github_user }}%2Fkiara%2Fbadge%3Fref%3Ddevelop&style=flat)](https://actions-badge.atrox.dev/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}/goto?ref=develop)
+[![Coverage Status](https://coveralls.io/repos/github/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}/badge.svg?branch=develop)](https://coveralls.io/github/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}?branch=develop)
 [![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
 # *kiara* modules ({{ cookiecutter.project_name }})
 
 A set of modules (and pipelines) for [*Kiara*](https://github.com/DHARPA-project/kiara).
 
- - Documentation: [https://dharpa.org/kiara_plugin.{{ cookiecutter.project_slug }}](https://dharpa.org/kiara_plugin.{{ cookiecutter.project_slug }})
- - Code: [https://github.com/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }}](https://github.com/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }})
+ - Documentation: [https://{{ cookiecutter.github_user }}.github.io/kiara_plugin.{{ cookiecutter.project_slug }}](https://{{ cookiecutter.github_user }}.github.io/kiara_plugin.{{ cookiecutter.project_slug }})
+ - Code: [https://github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}](https://github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }})
 
 ## Description
 
@@ -36,7 +36,7 @@ check the notes on how to setup a *Kiara* development environment under (TODO).
 For *NIX-like operating system, setting up a development environment is relatively easy:
 
 ```console
-git clone https://github.com/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }}.git
+git clone https://github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}.git
 cd kiara_plugin.{{ cookiecutter.project_slug }}
 python3 -m venv .venv
 source .venv/bin/activate
@@ -52,7 +52,7 @@ Once that is done, `cd` into a directory where you want this project folder to l
 
 ```console
 # make sure your virtual env is activated!!!
-git clone https://github.com/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }}.git
+git clone https://github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}.git
 cd kiara_plugin.{{ cookiecutter.project_slug }}
 pip install --extra-index-url https://pypi.fury.io/dharpa/ -U -e .[all_dev]
 ```
@@ -105,4 +105,3 @@ For details (and other, minor targets), check the ``Makefile``.
 
 This project is MPL v2.0 licensed, for the license text please check the [LICENSE](/LICENSE) file in this repository.
 
-[Copyright (c) 2021 DHARPA project](https://dharpa.org)

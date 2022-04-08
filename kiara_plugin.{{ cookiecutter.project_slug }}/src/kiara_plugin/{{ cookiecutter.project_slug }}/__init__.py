@@ -27,11 +27,11 @@ KIARA_METADATA = {
     "references": {
         "source_repo": {
             "desc": "The module package git repository.",
-            "url": "https://github.com/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }}",
+            "url": "https://github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}",
         },
         "documentation": {
             "desc": "The url for the module package documentation.",
-            "url": "https://dharpa.org/kiara_plugin.{{ cookiecutter.project_slug }}/",
+            "url": "https://{{ cookiecutter.github_user }}.github.io/kiara_plugin.{{ cookiecutter.project_slug }}/",
         },
     },
     "tags": ["{{ cookiecutter.project_slug }}"],

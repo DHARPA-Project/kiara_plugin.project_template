@@ -5,20 +5,18 @@ This package contains a set of commonly used/useful modules, pipelines, types an
 
 ## Description
 
-TODO
+{{ cookiecutter.project_short_description }}
 
 ## Package content
 
-{% raw %}{%{% endraw %} for info_category, details in get_info_for_categories('metadata.value_type','metadata.module', 'metadata.pipeline','metadata.operation_type', limit_to_package='kiara_plugin.{{ cookiecutter.project_slug }}').items() {% raw %}%}
-### {{ details['title'] }}
-{% for item, desc in details['items'].items() %}- [{{ item }}][]: {{ desc }} 
+{% raw %}{% for item, details in items.items() %}
+- [`{{ item }}`][kiara_info.{{ item_type }}.{{ item }}]: {{ details.documentation.description }} 
 {% endfor %}
-{% endfor %}
-{% endraw %}
+{% endfor %}{% endraw %}
 
 ## Links
 
- - Documentation: [https://dharpa.org/kiara_plugin.{{ cookiecutter.project_slug }}](https://dharpa.org/kiara_plugin.{{ cookiecutter.project_slug }})
- - Code: [https://github.com/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }}](https://github.com/DHARPA-Project/kiara_plugin.{{ cookiecutter.project_slug }})
+ - Documentation: [https://{{ cookiecutter.github_user }}.github.io/kiara_plugin.{{ cookiecutter.project_slug }}](https://{{ cookiecutter.github_user }}.github.io/kiara_plugin.{{ cookiecutter.project_slug }})
+ - Code: [https://github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}](https://github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }})
 
 
