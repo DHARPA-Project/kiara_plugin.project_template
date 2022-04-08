@@ -9,7 +9,10 @@ This package contains a set of commonly used/useful modules, pipelines, types an
 
 ## Package content
 
-{% raw %}{% for item, details in items.items() %}
+{% raw %}{% for item_type, items in get_package_index().items() %}
+
+### {{ item_type }}
+{% for item, details in items.items() %}
 - [`{{ item }}`][kiara_info.{{ item_type }}.{{ item }}]: {{ details.documentation.description }} 
 {% endfor %}
 {% endfor %}{% endraw %}
