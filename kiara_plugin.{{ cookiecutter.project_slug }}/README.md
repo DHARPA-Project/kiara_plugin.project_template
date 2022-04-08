@@ -5,12 +5,13 @@
 [![Coverage Status](https://coveralls.io/repos/github/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}/badge.svg?branch=develop)](https://coveralls.io/github/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}?branch=develop)
 [![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
-# *kiara* modules ({{ cookiecutter.project_name }})
+# [**kiara**](https://dharpa.org/kiara.documentation) plugin: ({{ cookiecutter.project_name }})
 
-A set of modules (and pipelines) for [*Kiara*](https://github.com/DHARPA-project/kiara).
+{{ cookiecutter.project_short_description }}
 
  - Documentation: [https://{{ cookiecutter.github_user }}.github.io/kiara_plugin.{{ cookiecutter.project_slug }}](https://{{ cookiecutter.github_user }}.github.io/kiara_plugin.{{ cookiecutter.project_slug }})
  - Code: [https://github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}](https://github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }})
+ - `kiara`: [https://dharpa.org/kiara.documentation](https://dharpa.org/kiara.documentation)
 
 ## Description
 
@@ -20,7 +21,7 @@ TODO
 
 ### Requirements
 
-- Python (version >=3.6 -- some make targets only work for Python >=3.7 though)
+- Python (version >= 3.8)
 - pip, virtualenv
 - git
 - make (on Linux / Mac OS X -- optional)

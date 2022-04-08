@@ -1,7 +1,6 @@
-# kiara modules for: {{ cookiecutter.project_name }}
+# [**kiara**](https://dharpa.org/kiara.documentation) plugin: {{ cookiecutter.project_name }}
 
 This package contains a set of commonly used/useful modules, pipelines, types and metadata schemas for [*Kiara*](https://github.com/DHARPA-project/kiara).
-
 
 ## Description
 
@@ -9,10 +8,10 @@ This package contains a set of commonly used/useful modules, pipelines, types an
 
 ## Package content
 
-{% raw %}{% for item_type, items in get_package_index().items() %}
+{% raw %}{% for item_type, item_group in get_context_info().get_all_info().items() %}
 
 ### {{ item_type }}
-{% for item, details in items.items() %}
+{% for item, details in item_group.items() %}
 - [`{{ item }}`][kiara_info.{{ item_type }}.{{ item }}]: {{ details.documentation.description }} 
 {% endfor %}
 {% endfor %}{% endraw %}
