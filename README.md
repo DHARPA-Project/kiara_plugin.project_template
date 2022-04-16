@@ -7,3 +7,11 @@ A project created with this template will very easy to use with *kiara*, and spo
 - automated generation of documentation (usage as well as API-reference), via [mkdocs](https://www.mkdocs.org/) 
 - automated building and publishing of Python packages
 - automated testing & linting via Github Actions
+
+
+# Usage
+
+cruft init ...
+git push
+github -> repo -> settings -> pages -> gh_pages (maybe enforce https)
+

@@ -5,7 +5,7 @@ from pydantic import Field
 
 from kiara.modules import KiaraModuleConfig, KiaraModule
 from kiara.models.values.value_schema import ValueSchema
-from kiara.models.values.value import ValueSet
+from kiara.models.values.value import ValueMap
 
 
 class ExampleModuleConfig(KiaraModuleConfig):
@@ -66,7 +66,7 @@ class ExampleModule(KiaraModule):
         }
         return outputs
 
-    def process(self, inputs: ValueSet, outputs: ValueSet) -> None:
+    def process(self, inputs: ValueMap, outputs: ValueMap) -> None:
 
         separator = self.get_config_value("separator")
 

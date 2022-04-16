@@ -24,7 +24,7 @@ requirements:
   run:
     - python
     - kiara
-    - kiara_plugin.core
+    - kiara_plugin.core_types
 about:
   home: https://github.com/{{ cookiecutter.github_user }}/kiara_plugin.{{ cookiecutter.project_slug }}
   license: "Mozilla Public 2.0 (MPL 2.0)"
