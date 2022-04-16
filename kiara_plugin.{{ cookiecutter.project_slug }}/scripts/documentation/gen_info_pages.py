@@ -5,7 +5,7 @@
 
 import builtins
 
-from kiara.kiara import Kiara, KiaraContextInfo
+from kiara.context import Kiara, KiaraContextInfo
 from kiara.doc.gen_info_pages import generate_detail_pages
 
 
