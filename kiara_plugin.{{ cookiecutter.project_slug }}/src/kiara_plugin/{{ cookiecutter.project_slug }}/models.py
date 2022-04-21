@@ -8,5 +8,5 @@ other type of models -- that is attached to data, as well as *kiara* modules.
 Metadata models must be a sub-class of [kiara.metadata.MetadataModel][kiara.metadata.MetadataModel]. Other models usually
 sub-class a pydantic BaseModel or implement custom base classes.
 """
-from kiara import KiaraEntryPointItem
+from kiara.utils.class_loading import KiaraEntryPointItem
 

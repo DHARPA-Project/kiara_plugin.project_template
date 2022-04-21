@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import typing
 from pydantic import Field
 
-from kiara.modules import KiaraModuleConfig, KiaraModule
+from kiara.modules import KiaraModuleConfig, KiaraModule, ValueSetSchema
 from kiara.models.values.value_schema import ValueSchema
 from kiara.models.values.value import ValueMap
 
@@ -41,9 +40,7 @@ class ExampleModule(KiaraModule):
 
     def create_inputs_schema(
         self,
-    ) -> typing.Mapping[
-        str, typing.Union[ValueSchema, typing.Mapping[str, typing.Any]]
-    ]:
+    ) -> ValueSetSchema:
 
         inputs = {
             "text_1": {"type": "string", "doc": "The first text."},
@@ -54,9 +51,7 @@ class ExampleModule(KiaraModule):
 
     def create_outputs_schema(
         self,
-    ) -> typing.Mapping[
-        str, typing.Union[ValueSchema, typing.Mapping[str, typing.Any]]
-    ]:
+    ) -> ValueSetSchema:
 
         outputs = {
             "text": {
