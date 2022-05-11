@@ -11,7 +11,7 @@ from kiara.utils.class_loading import (
     find_kiara_modules_under,
     find_data_types_under,
     find_pipeline_base_path_for_module,
-    find_value_metadata_models_under,
+    find_kiara_model_classes_under,
 )
 
 __author__ = """{{ cookiecutter.full_name }}"""
@@ -43,8 +43,8 @@ KIARA_METADATA = {
 find_modules: KiaraEntryPointItem = (
     find_kiara_modules_under, "kiara_plugin.{{ cookiecutter.project_slug }}.{{ cookiecutter.project_slug }}"
 )
-find_value_metadata: KiaraEntryPointItem = (
-    find_value_metadata_models_under,
+find_model_classes: KiaraEntryPointItem = (
+    find_kiara_model_classes_under,
     "kiara_plugin.{{ cookiecutter.project_slug }}.models",
 )
 find_data_types: KiaraEntryPointItem = (
